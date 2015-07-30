@@ -2,7 +2,7 @@
 # https://github.com/greenrobot/EventBus/blob/master/HOWTO.md#proguard-configuration
 
 -keepclassmembers class ** {
-    public void onEvent*(**);
+    public void onEvent*(***);
 }
 
 # Only required if you use AsyncExecutor
@@ -10,3 +10,6 @@
     public <init>(java.lang.Throwable);
 }
 
+# Don't warn for missing support classes
+-dontwarn de.greenrobot.event.util.*$Support
+-dontwarn de.greenrobot.event.util.*$SupportManagerFragment

@@ -1,7 +1,7 @@
 android-proguard-snippets
 ==========================
 
-Example Proguard configurations for common Android libraries. 
+Example Proguard configurations for common Android libraries.
 
 This project assumes that your ProGuard configuration is based off of the latest official [proguard-android.txt](https://android.googlesource.com/platform/tools/base/+/HEAD/files/proguard-android.txt) config as shown below. Each library configuration should only be the rules required for that specific library, not a complete Android ProGuard configuration. The various library configurations are combined by the Gradle build system. The library rules should be universal, any app specific rules (such as preserving model classes) should be added in a custom `proguard-project.pro` file.
 
@@ -10,7 +10,7 @@ Request additional libraries through issues. Pull requests are welcome.
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--proguard--snippets-brightgreen.svg?style=flat)](https://android-arsenal.com/details/3/1242)
 
 ### Usage
-```groovy 
+```groovy
 android {
   buildTypes {
     release {
@@ -19,9 +19,12 @@ android {
       proguardFile 'proguard-google-play-services.pro'
       proguardFile 'proguard-gson.pro'
       ...
-      // Default proguard files
-      proguardFile 'proguard-project.pro'
+      // Default proguard files & project app specific rules,
+      //  see examples folder for more information
+      proguardFile 'proguard-project-app.pro'
       proguardFile getDefaultProguardFile('proguard-android.txt')
+      // As of Gradle Android plugin 1.1.0, the test APK has a separate config
+      testProguardFile 'proguard-project-test.pro'
     }
   }
 }
@@ -33,6 +36,7 @@ android {
 * [ActiveAndroid](http://www.activeandroid.com/)
 * [Amazon Web Services 1.6.x / 1.7.x](https://aws.amazon.com/releasenotes/Android/1855915734308772)
 * [Amazon Web Services 2.1.x](https://github.com/aws/aws-sdk-android)
+* [AndroidAnnotations](http://androidannotations.org/)
 * [android-gif-drawable](https://github.com/koral--/android-gif-drawable)
 * [Apache Avro](http://http://avro.apache.org/)
 * [Butterknife 5.1.2](http://jakewharton.github.io/butterknife/)
@@ -54,6 +58,7 @@ android {
 * [Parse](https://parse.com/products/android)
 * [Realm](http://realm.io/news/realm-for-android/)
 * [RxJava 0.21](https://github.com/ReactiveX/RxJava/wiki/The-RxJava-Android-Module)
+* [Support Library v7](https://developer.android.com/tools/support-library/features.html#v7-appcompat)
 * [Sqlite](http://www.sqlite.org/index.html)
 * [Square OkHttp](http://square.github.io/okhttp/)
 * [Square Okio](https://github.com/square/okio)
@@ -61,3 +66,5 @@ android {
 * [Square Picasso](https://github.com/square/picasso)
 * [Square Retrofit](http://square.github.io/retrofit/)
 * [Square Wire](https://github.com/square/wire)
+* [Icepick](https://github.com/frankiesardo/icepick)
+* [Simple-Xml] (http://simple.sourceforge.net/)
