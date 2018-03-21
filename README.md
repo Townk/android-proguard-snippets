@@ -45,6 +45,7 @@ proguardFiles fileTree(dir: "$PATH_TO_THE_PROGUARD_FILES", include: ["*.pro"]).a
 * [ActionBarSherlock 4.4.0](http://actionbarsherlock.com/)
 * [ActiveAndroid](http://www.activeandroid.com/)
 * [Adjust](https://github.com/adjust/android_sdk)
+* [Akka](http://akka.io/)
 * [Amazon Web Services 1.6.x / 1.7.x](https://aws.amazon.com/releasenotes/Android/1855915734308772)
 * [Amazon Web Services 2.1.x](https://github.com/aws/aws-sdk-android)
 * [AndroidAnnotations](http://androidannotations.org/)
